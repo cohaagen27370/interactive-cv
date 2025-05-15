@@ -7,7 +7,7 @@
       </a>
     </div>
     <div class="header-nav">
-      <a href="javascript://" class="nav-link nav-text active">Présentation</a>
+      <a [routerLink]="['home']" class="nav-link nav-text active">Présentation</a>
       <a href="javascript://" class="nav-link nav-text">Mes expériences</a>
       <a href="javascript://" class="nav-link nav-text">Mes savoirs-faire</a>
       <a href="javascript://" class="nav-link nav-text">Mes savoirs-être</a>
@@ -19,8 +19,7 @@
           <cds-icon shape="angle" direction="down"></cds-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-          <a href="..." clrDropdownItem>Preferences</a>
-          <a href="..." clrDropdownItem>Log out</a>
+          <a [routerLink]="['contact-details']" clrDropdownItem>Mes coordonnées</a>
         </clr-dropdown-menu>
       </clr-dropdown>
       <a href="javascript://" class="nav-link">
@@ -28,9 +27,5 @@
       </a>
     </div>
   </clr-header>
-<!--  <div class="content-container">-->
-<!--    <div class="content-area"></div>-->
-<!--  </div>-->
+  <router-outlet />
 </clr-main-container>
-
-<router-outlet />
