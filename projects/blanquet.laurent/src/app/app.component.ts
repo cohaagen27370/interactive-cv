@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ClarityModule} from '@clr/angular';
-import {ClarityIcons, cogIcon, formIcon} from '@cds/core/icon';
+import {
+  announcementIcon,
+  briefcaseIcon,
+  ClarityIcons,
+  formIcon,
+  organizationIcon,
+  userIcon
+} from '@cds/core/icon';
 
-ClarityIcons.addIcons(formIcon, cogIcon);
+ClarityIcons.addIcons(formIcon, userIcon, briefcaseIcon, organizationIcon, announcementIcon);
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
-    ClarityModule, RouterLink],
+    ClarityModule, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

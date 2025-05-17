@@ -3,17 +3,27 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
   path: '',
-  redirectTo: '/home',
+  redirectTo: '/presentation',
   pathMatch: 'full'
 },
   {
-    path: 'home',
-    title : 'CV interactif - Blanquet Laurent',
-    loadComponent: () => import('../pages/home/home.component').then(m => m.HomeComponent)
+    path: 'presentation',
+    title : 'Présentation - Blanquet Laurent',
+    loadComponent: () => import('../pages/presentation/presentation.component').then(m => m.PresentationComponent)
   },
   {
-    path: 'contact-details',
-    title : 'Coordonnées - Blanquet Laurent',
-    loadComponent: () => import('../pages/contact-details/contact-details.component').then(m => m.ContactDetailsComponent)
-  }
+    path: 'experiences',
+    title : 'Expériences - Blanquet Laurent',
+    loadComponent: () => import('../pages/experiences/experiences.component').then(m => m.ExperiencesComponent)
+  },
+  {
+    path: 'being',
+    title : 'Savoirs être - Blanquet Laurent',
+    loadComponent: () => import('../pages/being/being.component').then(m => m.BeingComponent)
+  },
+  {
+    path: 'skills',
+    title : 'Savoirs faire - Blanquet Laurent',
+    loadComponent: () => import('../pages/skills/skills.component').then(m => m.SkillsComponent)
+  },
 ];
