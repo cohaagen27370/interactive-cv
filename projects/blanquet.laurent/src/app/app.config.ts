@@ -1,6 +1,6 @@
 import {
   ApplicationConfig,
-  importProvidersFrom,
+  importProvidersFrom, provideAppInitializer,
   provideExperimentalZonelessChangeDetection,
   provideZoneChangeDetection
 } from '@angular/core';
@@ -10,6 +10,7 @@ import { ClarityModule } from '@clr/angular';
 import { routes } from './app.routes';
 import {provideAnimations, provideNoopAnimations} from '@angular/platform-browser/animations';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {initializeAppFactory} from '../services/feed.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     provideAnimationsAsync(),
-    provideNoopAnimations()
-    //importProvidersFrom(ClarityModule)
+    provideNoopAnimations(),
+    provideAppInitializer(initializeAppFactory())
   ]
 };
