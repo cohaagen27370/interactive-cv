@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ClarityModule} from '@clr/angular';
 import {
   ClarityIcons,
   exclamationCircleIcon
 } from '@cds/core/icon';
+import {globalStore} from '../../global.store';
+import {ExperienceComponent} from './components/experience/experience.component';
 
 ClarityIcons.addIcons(exclamationCircleIcon);
 
 @Component({
   selector: 'page-experiences',
-  imports: [ClarityModule],
+  imports: [ClarityModule, ExperienceComponent],
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.scss'
 })
 export class ExperiencesComponent {
 
-  navigateTo(link:string) {
-    window.open(link, '_blank');
-  }
+  $store = inject(globalStore);
 
 }

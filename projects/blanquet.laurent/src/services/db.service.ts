@@ -1,6 +1,6 @@
 ﻿import { Injectable, inject } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 
 
 export interface Address {
@@ -30,29 +30,29 @@ export interface Version {
 export class DbService {
   private dbService = inject(NgxIndexedDBService);
 
-  addVersion(version: Version): Observable<Version> {
-    return this.dbService.add('version', version);
+  addVersion(version: Version) {
+    return lastValueFrom(this.dbService.add('version', version));
   }
-  getVersion(id: number): Observable<Version | undefined> {
-    return this.dbService.getByKey('version', id);
+  clearVersions() {
+    return lastValueFrom(this.dbService.clear('version'));
   }
-  getAllVersions(): Observable<Version[]> {
-    return this.dbService.getAll('version');
-  }
-  updateVersion(version: Version): Observable<any> {
-    return this.dbService.update('version', version);
+  getAllVersions() {
+    return lastValueFrom(this.dbService.getAll<Version>('version'));
   }
 
 
-  addPresentation(presentation: Presentation): Observable<Presentation> {
-    return this.dbService.add('presentation', presentation);
+  addPresentation(presentation: Presentation) {
+    return lastValueFrom(this.dbService.add('presentation', presentation));
   }
-  getAllPresentations(): Observable<Presentation[]> {
-    return this.dbService.getAll('presentation');
+  clearPresentation() {
+    return lastValueFrom(this.dbService.clear('presentation'));
   }
-  updatePresentation(presentation: Presentation): Observable<any> {
-    return this.dbService.update('presentation', presentation);
+  getAllPresentations() {
+    return lastValueFrom(this.dbService.getAll<Presentation>('presentation'));
   }
+
+
+
 
 
 

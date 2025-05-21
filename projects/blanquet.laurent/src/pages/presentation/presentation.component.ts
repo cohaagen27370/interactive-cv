@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { differenceInYears } from 'date-fns';
+import {globalStore} from '../../global.store';
 
 @Component({
   selector: 'page-presentation',
@@ -7,13 +8,10 @@ import { differenceInYears } from 'date-fns';
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.scss'
 })
-export class PresentationComponent implements OnInit{
+export class PresentationComponent{
 
-    age:number = 44;
+    $store = inject(globalStore);
 
-    ngOnInit() {
-      const now = new Date();
-      this.age = differenceInYears(now, new Date(1980,7,11));
-    }
+    age:string = differenceInYears(new Date(), new Date(1980,7,11)).toString();
 
 }

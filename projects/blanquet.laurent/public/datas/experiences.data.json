@@ -1,0 +1,78 @@
+﻿{
+  "experiences": [
+    {
+      "society": {
+        "name": "Matmut",
+        "url": "https://www.matmut.fr/"
+      },
+      "job": "Concepteur développeur",
+      "startYear": 2012,
+      "description": "Conceptions, analyses et développements sur des applications internets et intranets de gestion ( Santé, production, sinistre).",
+      "tags": [
+        ".Net",
+        "Sql Server",
+        "Kubernetes",
+        "Docker",
+        "AspNet MVC",
+        "JQuery"
+      ]
+    },
+    {
+      "society": {
+        "name": "NeoSecurity",
+        "url": "https://fr.wikipedia.org/wiki/Neo_Security"
+      },
+      "job": "Développeur backoffice & web",
+      "startYear": 2011,
+      "endYear": 2012,
+      "description": "Conceptions, analyses et développement sur des\n applications intranet de gestion (contrats, relance de\n facture).",
+      "tags": [
+        ".Net framework",
+        "Sql Server",
+        "AspNet MVC",
+        "JQuery",
+        "VB6",
+        "JavaEE",
+        "Crystal Report",
+        "ExtJs"
+      ]
+    },
+    {
+      "society": {
+        "name": "Masternaut",
+        "url": "https://www.masternaut.com/fr/"
+      },
+      "job": "Développeur backoffice",
+      "startYear": 2007,
+      "endYear": 2011,
+      "description": "Analyses et développements des reportings client\n (excel, word, pdf, graphiques).",
+      "tags": [
+        ".Net framework",
+        "MySql",
+        "Webform",
+        "Winform",
+        "VB6",
+        "Jasper Report",
+        "JBoss",
+        "Linux",
+        "Debian",
+        "Tomcat"
+      ]
+    },
+    {
+      "society": {
+        "name": "Isipharm",
+        "url": "https://astera.coop/qui-sommes-nous/les-societes-du-groupe/isipharm-leo/"
+      },
+      "job": "Hotliner & développeur outils internes",
+      "startYear": 2002,
+      "endYear": 2007,
+      "description": "Maintenance et dépannage téléphonique de\nl’informatique dans les pharmacies.\nDéveloppement d'outils de gestion de prise d'appel.",
+      "tags": [
+        ".Net framework",
+        "Winform",
+        "VB6"
+      ]
+    }
+  ]
+}

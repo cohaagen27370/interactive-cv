@@ -22,6 +22,7 @@
     "@clr/angular": "^17.9.0",
     "@clr/icons": "^13.0.2",
     "@clr/ui": "^17.9.0",
+    "@ngrx/signals": "^19.2.0",
     "date-fns": "^4.1.0",
     "ngx-indexed-db": "^20.0.1",
     "rxjs": "~7.8.0",
