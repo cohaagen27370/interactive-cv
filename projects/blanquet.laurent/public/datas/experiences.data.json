@@ -9,12 +9,30 @@
       "startYear": 2012,
       "description": "Conceptions, analyses et développements sur des applications internets et intranets de gestion ( Santé, production, sinistre).",
       "tags": [
-        ".Net",
-        "Sql Server",
-        "Kubernetes",
-        "Docker",
-        "AspNet MVC",
-        "JQuery"
+        {
+          "label": ".Net",
+          "tag": "C#"
+        },
+        {
+          "label": "Sql Server",
+          "tag": "Sql Server"
+        },
+        {
+          "label": "Kubernetes",
+          "tag": "Kubernetes"
+        },
+        {
+          "label": "Docker",
+          "tag": "Docker"
+        },
+        {
+          "label": "AspNet MVC",
+          "tag": "Razor"
+        },
+        {
+          "label": "JQuery",
+          "tag": "JQuery"
+        }
       ]
     },
     {
@@ -27,14 +45,38 @@
       "endYear": 2012,
       "description": "Conceptions, analyses et développement sur des\n applications intranet de gestion (contrats, relance de\n facture).",
       "tags": [
-        ".Net framework",
-        "Sql Server",
-        "AspNet MVC",
-        "JQuery",
-        "VB6",
-        "JavaEE",
-        "Crystal Report",
-        "ExtJs"
+        {
+          "label": ".Net framework",
+          "tag": "C#"
+        },
+        {
+          "label": "Sql Server",
+          "tag": "Sql Server"
+        },
+        {
+          "label": "AspNet MVC",
+          "tag": "Razor"
+        },
+        {
+          "label": "JQuery",
+          "tag": "JQuery"
+        },
+        {
+          "label": "VB6",
+          "tag": "VB6"
+        },
+        {
+          "label": "JavaEE",
+          "tag": "Java"
+        },
+        {
+          "label": "Crystal Report",
+          "tag": "VB6"
+        },
+        {
+          "label": "ExtJs",
+          "tag": "Javascript"
+        }
       ]
     },
     {
@@ -47,16 +89,46 @@
       "endYear": 2011,
       "description": "Analyses et développements des reportings client\n (excel, word, pdf, graphiques).",
       "tags": [
-        ".Net framework",
-        "MySql",
-        "Webform",
-        "Winform",
-        "VB6",
-        "Jasper Report",
-        "JBoss",
-        "Linux",
-        "Debian",
-        "Tomcat"
+        {
+          "label": ".Net framework",
+          "tag": "C#"
+        },
+        {
+          "label": "MySql",
+          "tag": "MySql"
+        },
+        {
+          "label": "Webform",
+          "tag": "C#"
+        },
+        {
+          "label": "Winform",
+          "tag": "C#"
+        },
+        {
+          "label": "VB6",
+          "tag": "VB6"
+        },
+        {
+          "label": "Jasper Report",
+          "tag": "Java"
+        },
+        {
+          "label": "JBoss",
+          "tag": "Linux (Debian, Mint)"
+        },
+        {
+          "label": "Linux",
+          "tag": "Linux (Debian, Mint)"
+        },
+        {
+          "label": "Debian",
+          "tag": "Linux (Debian, Mint)"
+        },
+        {
+          "label": "Tomcat",
+          "tag": "Java"
+        }
       ]
     },
     {
@@ -69,9 +141,18 @@
       "endYear": 2007,
       "description": "Maintenance et dépannage téléphonique de\nl’informatique dans les pharmacies.\nDéveloppement d'outils de gestion de prise d'appel.",
       "tags": [
-        ".Net framework",
-        "Winform",
-        "VB6"
+        {
+          "label": ".Net framework",
+          "tag": "C#"
+        },
+        {
+          "label": "Winform",
+          "tag": "C#"
+        },
+        {
+          "label": "VB6",
+          "tag": "VB6"
+        }
       ]
     }
   ]

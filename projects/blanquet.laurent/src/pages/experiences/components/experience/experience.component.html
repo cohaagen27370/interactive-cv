@@ -1,35 +1,45 @@
+<div class="card">
+  <div class="card-header clickable" (click)="navigateTo(model().society.url)">{{ model().society.name }}</div>
 
-  <div class="card">
-    <div class="card-header clickable" (click)="navigateTo(model().society.url)">{{ model().society.name }}</div>
-
-    <div class="card-block">
-      <div class="card-media-block wrap">
-        <div class="card-media-description">
-          <span class="card-title">{{ model().job }}</span>
-          <span class="card-media-text">De {{  model().startYear }} à {{ model().endYear ? model().endYear : "maintenant" }} <i>({{ model().endYear ? (model().endYear! - model().startYear) : (nowYear - model().startYear)  }} an(s))</i></span>
-        </div>
-
-        @if(!model().endYear) {
-          <div class="alert alert-info alert-sm">
-            <div class="alert-items">
-              <div class="alert-item static">
-                <div class="alert-icon-wrapper">
-                  <cds-icon shape="exclamation-circle"></cds-icon>
-                </div>
-                <span class="alert-text">Poste actuellement occupé.</span>
-              </div>
-            </div>
-          </div>
-        }
-
+  <div class="card-block">
+    <div class="card-media-block wrap">
+      <div class="card-media-description">
+        <span class="card-title">{{ model().job }}</span>
+        <span class="card-media-text">De {{ model().startYear }} à {{ model().endYear ? model().endYear : "maintenant"
+          }} <i>({{ model().endYear ? (model().endYear! - model().startYear) : (nowYear - model().startYear) }}
+            an(s))</i></span>
       </div>
 
-      <div class="card-text" [innerHTML]="model().description"></div>
-
-
-      @for(tag of model().tags; track tag; let odd = $odd) {
-        <span [ngClass]="{'label clickable':true, 'label-info': odd , 'label-success': !odd}">{{ tag }}</span>
+      @if(!model().endYear) {
+      <div class="alert alert-info alert-sm">
+        <div class="alert-items">
+          <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+              <cds-icon shape="exclamation-circle"></cds-icon>
+            </div>
+            <span class="alert-text">Poste actuellement occupé.</span>
+          </div>
+        </div>
+      </div>
       }
 
     </div>
+
+    <div class="card-text" [innerHTML]="model().description"></div>
+
+
+    @for(tag of model().tags; track tag; let odd = $odd) {
+    <span [ngClass]="{'label clickable':true, 'label-info': odd , 'label-success': !odd}" role="tooltip"
+      aria-haspopup="true" class="tooltip">
+      {{ tag.label }}
+      <span class="tooltip-content">
+        @let infoTag = getTagInfo(tag.tag);
+        @if(infoTag) {
+        <span class="font-white">{{ infoTag!.name }} <b>{{ infoTag!.label }}</b></span>
+        }
+      </span>
+    </span>
+    }
+
   </div>
+</div>

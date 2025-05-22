@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">{{ model().title }}</div>
+
+  <table class="table table-noborder">
+    <tbody>
+
+      @for(skill of model().content; track skill.name) {
+      <tr>
+        <td>{{ skill.name }}</td>
+        <td class="skills-level"><clr-progress-bar [clrColor]="getColor(skill.level)" [clrValue]="skill.level"
+            clrMax="100"></clr-progress-bar>
+        </td>
+        <td><b>{{ skill.label }}</b></td>
+      </tr>
+      }
+
+    </tbody>
+  </table>
+
+</div>

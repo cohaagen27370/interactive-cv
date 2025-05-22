@@ -1,11 +1,9 @@
-import {Component, inject} from '@angular/core';
-import {ClarityModule} from '@clr/angular';
-import {
-  ClarityIcons,
-  exclamationCircleIcon
-} from '@cds/core/icon';
-import {globalStore} from '../../global.store';
-import {ExperienceComponent} from './components/experience/experience.component';
+import { Component, inject } from '@angular/core';
+import { ClarityModule } from '@clr/angular';
+import { ClarityIcons, exclamationCircleIcon } from '@cds/core/icon';
+import { globalStore } from '../../global.store';
+import { Experience } from '../../types';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 ClarityIcons.addIcons(exclamationCircleIcon);
 
@@ -13,10 +11,8 @@ ClarityIcons.addIcons(exclamationCircleIcon);
   selector: 'page-experiences',
   imports: [ClarityModule, ExperienceComponent],
   templateUrl: './experiences.component.html',
-  styleUrl: './experiences.component.scss'
+  styleUrl: './experiences.component.scss',
 })
 export class ExperiencesComponent {
-
   $store = inject(globalStore);
-
 }
