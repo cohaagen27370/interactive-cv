@@ -23,7 +23,7 @@
       <div class="card-header">Mon profil</div>
       <div class="card-block">
         <div class="card-text">
-          <p cds-text="message" [innerHTML]="$store.presentation()!.profil"></p>
+          <p cds-text="message" [innerHTML]="$store.presentation()!.profil.replace('anneesExperience',anneesExperience)"></p>
         </div>
       </div>
     </div>

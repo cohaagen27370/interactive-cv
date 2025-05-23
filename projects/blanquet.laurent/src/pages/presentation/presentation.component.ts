@@ -13,5 +13,6 @@ export class PresentationComponent{
     $store = inject(globalStore);
 
     age:string = differenceInYears(new Date(), new Date(1980,7,11)).toString();
+    anneesExperience: string = differenceInYears(new Date(), new Date(2001,7,1)).toString();
 
 }
