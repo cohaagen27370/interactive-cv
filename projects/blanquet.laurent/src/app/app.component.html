@@ -17,6 +17,10 @@
           Présentation
         </a>
         <div class="nav-divider"></div>
+        <a clrVerticalNavLink routerLink="./trainings" routerLinkActive="active">
+          <cds-icon clrVerticalNavIcon shape="briefcase"></cds-icon>
+          Mes formations
+        </a>
         <a clrVerticalNavLink routerLink="./experiences" routerLinkActive="active">
           <cds-icon clrVerticalNavIcon shape="briefcase"></cds-icon>
           Mes expériences
@@ -35,9 +39,24 @@
         </a>
       </clr-vertical-nav>
       <div class="content-area">
-        <router-outlet></router-outlet>
+        <div [@routeAnimations]="prepareRoute(outlet)">
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
 
         <div class="margin">&nbsp;</div>
       </div>
     </div>
+
+  <footer class="main-footer">
+    <div class="clr-row clr-justify-content-center clr-align-items-center">
+      <div class="clr-col-12 clr-text-align-center">
+        <p>&nbsp; &copy; {{nowYear}} Développé avec Angular 19 / ngrx signalstore / ngx-indexed-db / Clarity design system</p>
+        <p>
+          <a href="https://github.com/cohaagen27370/interactive-cv">Repository github de ce site</a> |
+          <a href="https://clarity.design/">Clarity Design System</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
 </clr-main-container>

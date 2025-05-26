@@ -1,3 +1,31 @@
 .margin {
   height: 200px;
 }
+
+.main-footer {
+  background-color: #E3EAED;
+  color: #5B4D8B;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.85em;
+
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.main-footer p {
+  margin: 0px 0;
+}
+
+.main-footer a {
+  color: #5B4D8B;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.main-footer a:hover {
+  text-decoration: underline;
+}

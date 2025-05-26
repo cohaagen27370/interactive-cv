@@ -1,0 +1,15 @@
+﻿{
+  "qualities": [
+    "ponctualité",
+    "rigueur",
+    "calme",
+    "réactivité",
+    "patience",
+    "motivation",
+    "bonne communication"
+  ],
+  "defaults": [
+    "rigueur (trop)",
+    "franchise (trop)"
+  ]
+}

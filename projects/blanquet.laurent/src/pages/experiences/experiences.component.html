@@ -1,6 +1,6 @@
 <div class="clr-row">
 
-  @for(exp of $store['experiences'](); track exp.society.name) {
+  @for(exp of $store['experiences'](); track exp.society) {
   <div class="clr-col-xl-6 clr-col-lg-12 clr-col-md-12 clr-col-sm-12 clr-col-12">
     <app-experience [model]="exp"></app-experience>
   </div>

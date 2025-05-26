@@ -1,1 +1,28 @@
-<p>know-how works!</p>
+<table class="table table-noborder table-compact">
+  <thead>
+  <tr>
+    <th>Qualités</th>
+    <th>Défauts</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  @for(line of maxLength; track line) {
+    @if ($store.howto().qualities[line] || $store.howto().defaults[line])
+    {
+    <tr>
+      <td>
+        @if ($store.howto() && $store.howto().qualities[line]) {
+          <td>{{$store.howto().qualities[line]}}</td>
+        }
+      </td>
+      <td>
+        @if ($store.howto() && $store.howto().defaults[line]) {
+          <td>{{$store.howto().defaults[line]}}</td>
+        }
+      </td>
+      }
+  }
+
+  </tbody>
+  </table>

@@ -27,8 +27,8 @@
 
     <div class="card-text" [innerHTML]="model().description"></div>
 
-
     @for(tag of model().tags; track tag; let odd = $odd) {
+
     <span [ngClass]="{'label clickable':true, 'label-info': odd , 'label-success': !odd}" role="tooltip"
       aria-haspopup="true" class="tooltip">
       {{ tag.label }}

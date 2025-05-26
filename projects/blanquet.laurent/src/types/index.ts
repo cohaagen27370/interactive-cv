@@ -38,3 +38,14 @@ export type SkillContent = {
   level: number;
   label: string;
 };
+
+export type Training = {
+  title: string;
+  period: string;
+  spec: string;
+};
+
+export type HowTo = {
+  qualities: Array<string>,
+  defaults: Array<string>
+}

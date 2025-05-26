@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
-import { NgClass } from '@angular/common';
+import { NgClass} from '@angular/common';
 import { Experience, Skill } from '../../../../types';
 import { globalStore } from '../../../../global.store';
 
