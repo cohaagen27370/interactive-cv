@@ -1,0 +1,10 @@
+<div class="clr-row">
+
+  @for(train of $store['trainings'](); track train.title) {
+    <div class="clr-col-xl-6 clr-col-lg-12 clr-col-md-12 clr-col-sm-12 clr-col-12">
+      <app-training [model]="train"></app-training>
+    </div>
+  }
+
+</div>
+
