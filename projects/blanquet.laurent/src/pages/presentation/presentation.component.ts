@@ -1,10 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
 import { differenceInYears } from 'date-fns';
 import {globalStore} from '../../global.store';
+import {MapComponent} from './component/map/map.component';
 
 @Component({
   selector: 'page-presentation',
-  imports: [],
+  imports: [MapComponent],
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.scss'
 })

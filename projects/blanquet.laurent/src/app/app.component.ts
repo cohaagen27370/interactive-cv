@@ -3,11 +3,13 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ClarityModule} from '@clr/angular';
 import {
   announcementIcon,
-  briefcaseIcon,
+  certificateIcon,
   ClarityIcons,
   formIcon,
   organizationIcon,
-  userIcon
+  userIcon,
+  cpuIcon,
+  briefcaseIcon
 } from '@cds/core/icon';
 import {
   trigger,
@@ -20,7 +22,7 @@ import {
 } from '@angular/animations';
 import {CommonModule} from '@angular/common';
 
-ClarityIcons.addIcons(formIcon, userIcon, briefcaseIcon, organizationIcon, announcementIcon);
+ClarityIcons.addIcons(formIcon, userIcon, certificateIcon, organizationIcon,briefcaseIcon, announcementIcon, cpuIcon);
 
 @Component({
   selector: 'app-root',

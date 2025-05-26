@@ -36,4 +36,10 @@ export const routes: Routes = [
     loadComponent: () => import('../pages/skills/skills.component').then(m => m.SkillsComponent),
     data: { animation: 'skills' }
   },
+  {
+    path: 'monitoring',
+    title : 'Veille & IA - Blanquet Laurent',
+    loadComponent: () => import('../pages/monitoring/monitoring.component').then(m => m.MonitoringComponent),
+    data: { animation: 'monitoring' }
+  },
 ];
