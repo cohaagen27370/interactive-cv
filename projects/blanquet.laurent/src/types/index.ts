@@ -49,3 +49,9 @@ export type HowTo = {
   qualities: Array<string>,
   defaults: Array<string>
 }
+
+export type Version = {
+  id: number;
+  version: number;
+  date: string;
+}

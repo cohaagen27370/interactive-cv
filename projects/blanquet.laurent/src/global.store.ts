@@ -4,12 +4,7 @@
   withHooks,
   withState,
 } from '@ngrx/signals';
-import * as presentationJson from '../public/datas/presentation.data.json';
-import * as experiencesJson from '../public/datas/experiences.data.json';
-import * as skillsJson from '../public/datas/skills.data.json';
-import * as trainingsJson from '../public/datas/trainings.data.json';
-import * as howToJson from '../public/datas/howto.data.json';
-import {Experience, HowTo, Presentation, Skill, Training} from './types';
+import {Experience, HowTo, Presentation, Skill, Training, Version} from './types';
 import {inject} from '@angular/core';
 import {DbService} from './services/db.service';
 
@@ -19,6 +14,8 @@ export interface State {
   skills: Array<Skill>;
   trainings: Array<Training>;
   howto: HowTo;
+  dataUrl: string;
+  version: Version;
   isloading: boolean;
 }
 
@@ -28,16 +25,51 @@ export const StateInitial: State = {
   skills: [],
   trainings: [],
   howto: { qualities: [], defaults: [] },
+  dataUrl: 'https://cohaagen.proxydns.com/services/datasCV/',
+  version: { version: 0, date: '', id: 0 },
   isloading: false,
 };
 
 export const globalStore = signalStore(
   { providedIn: 'root' },
   withState(StateInitial),
-  //withMethods((store) => ({})),
   withHooks((store, dbService = inject(DbService)) => ({
     async onInit() {
       patchState(store, { isloading: true });
+
+      const versions = await dbService.getAllVersions();
+      const remoteVersion = await (await fetch(`${store.dataUrl()}version.data.json`)).json() as Version;
+
+      if (versions && versions.length > 0)
+      {
+        if (versions[0].version != remoteVersion.version)
+        {
+          remoteVersion.id = versions[0].id;
+
+          await dbService.clearPresentation();
+          await dbService.clearHowto();
+          await dbService.clearExperiences();
+          await dbService.clearSkills();
+          await dbService.clearTrainings();
+          await dbService.updateVersion(remoteVersion);
+
+          patchState(store, {
+            version: remoteVersion
+          });
+        }
+        else {
+          patchState(store, {
+            version: versions[0]
+          });
+        }
+
+      }
+      else {
+        await dbService.addVersion(remoteVersion);
+        patchState(store, {
+          version: remoteVersion
+        });
+      }
 
       const presentations = await dbService.getAllPresentations();
       if (presentations && presentations.length > 0)
@@ -47,14 +79,14 @@ export const globalStore = signalStore(
         });
       }
       else {
-        await dbService.addPresentation(presentationJson as Presentation);
+        const presentationJson = await (await fetch(`${store.dataUrl()}presentation.data.json`)).json() as Presentation;
+        await dbService.addPresentation(presentationJson);
         patchState(store, {
-          presentation: presentationJson as Presentation
+          presentation: presentationJson
         });
       }
 
       const howtos = await dbService.getAllHowtos();
-      console.log(howtos);
       if (howtos && howtos.length > 0)
       {
         patchState(store, {
@@ -62,6 +94,7 @@ export const globalStore = signalStore(
         });
       }
       else {
+        const howToJson = await (await fetch(`${store.dataUrl()}howto.data.json`)).json() as HowTo;
         await dbService.addHowto(howToJson as HowTo);
         patchState(store, {
           howto: howToJson as HowTo
@@ -77,6 +110,7 @@ export const globalStore = signalStore(
         });
       }
       else {
+        const experiencesJson = await (await fetch(`${store.dataUrl()}experiences.data.json`)).json();
         await dbService.addExperiences(experiencesJson.experiences as Array<Experience>);
         patchState(store, {
           experiences: experiencesJson.experiences as Array<Experience>
@@ -91,6 +125,7 @@ export const globalStore = signalStore(
         });
       }
       else {
+        const skillsJson = await (await fetch(`${store.dataUrl()}skills.data.json`)).json();
         await dbService.addSkills(skillsJson.skills as Array<Skill>);
         patchState(store, {
           skills: skillsJson.skills as Array<Skill>
@@ -105,6 +140,7 @@ export const globalStore = signalStore(
         });
       }
       else {
+        const trainingsJson = await (await fetch(`${store.dataUrl()}trainings.data.json`)).json();
         await dbService.addTrainings(trainingsJson.trainings as Array<Training>);
         patchState(store, {
           trainings : trainingsJson.trainings as Array<Training>

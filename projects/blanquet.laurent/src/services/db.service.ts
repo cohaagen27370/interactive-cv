@@ -1,7 +1,7 @@
 ﻿import { Injectable, inject } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { lastValueFrom } from 'rxjs';
-import {Experience, HowTo, Presentation, Skill, Training} from '../types';
+import {Experience, HowTo, Presentation, Skill, Training, Version} from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -9,16 +9,16 @@ import {Experience, HowTo, Presentation, Skill, Training} from '../types';
 export class DbService {
   private dbService = inject(NgxIndexedDBService);
 
-  // addVersion(version: Version) {
-  //   return lastValueFrom(this.dbService.add('version', version));
-  // }
-  // clearVersions() {
-  //   return lastValueFrom(this.dbService.clear('version'));
-  // }
-  // getAllVersions() {
-  //   return lastValueFrom(this.dbService.getAll<Version>('version'));
-  // }
-  //
+  addVersion(version: Version) {
+    return lastValueFrom(this.dbService.add('version', version));
+  }
+  updateVersion(version: Version) {
+    return lastValueFrom(this.dbService.update<Version>('version', version));
+  }
+  getAllVersions() {
+    return lastValueFrom(this.dbService.getAll<Version>('version'));
+  }
+
 
   addPresentation(presentation: Presentation) {
     return lastValueFrom(this.dbService.add('presentation', presentation));

@@ -11,8 +11,9 @@ import {DBConfig, provideIndexedDb} from 'ngx-indexed-db';
 
 const dbConfig: DBConfig  = {
   name: 'CvBlanquetLaurent',
-  version: 3,
-  objectStoresMeta: [{
+  version: 5,
+  objectStoresMeta: [
+    {
     store: 'presentation',
     storeConfig: { keyPath: 'id', autoIncrement: true },
     storeSchema: [
@@ -25,7 +26,15 @@ const dbConfig: DBConfig  = {
       { name: 'telephone', keypath: 'address.telephone', options: { unique: false } },
       { name: 'email', keypath: 'address.email', options: { unique: false } }
     ]
-  },
+    },
+    {
+      store: 'version',
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'number', keypath: 'number', options: { unique: false } },
+        { name: 'date', keypath: 'date', options: { unique: false } },
+      ]
+    },
     {
       store: 'experiences',
       storeConfig: { keyPath: 'id', autoIncrement: true },
