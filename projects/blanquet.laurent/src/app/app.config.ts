@@ -11,7 +11,7 @@ import {DBConfig, provideIndexedDb} from 'ngx-indexed-db';
 
 const dbConfig: DBConfig  = {
   name: 'CvBlanquetLaurent',
-  version: 2,
+  version: 3,
   objectStoresMeta: [{
     store: 'presentation',
     storeConfig: { keyPath: 'id', autoIncrement: true },
