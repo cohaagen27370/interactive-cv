@@ -272,6 +272,47 @@
       ]
     },
     {
+      "title": "Outils de développement",
+      "content": [
+        {
+          "name": "VisualStudio 2022",
+          "level": 100,
+          "label": "Expert"
+        },
+        {
+          "name": "VisualStudio Code",
+          "level": 100,
+          "label": "Expert"
+        },
+        {
+          "name": "Jetbrains Rider",
+          "level": 100,
+          "label": "Expert"
+        },
+        {
+          "name": "Jetbrains Webstorm",
+          "level": 100,
+          "label": "Expert"
+        },
+        {
+          "name": "Git",
+          "level": 100,
+          "label": "Expert"
+        },
+        {
+          "name": "Subversion",
+          "level": 80,
+          "label": "Maîtrise"
+        },
+        {
+          "name": "Azure DevOps",
+          "level": 80,
+          "label": "Maîtrise"
+        }
+      ]
+    },
+
+    {
       "title": "Agilité",
       "content": [
         {
