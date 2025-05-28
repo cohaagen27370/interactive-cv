@@ -1,0 +1,13 @@
+<span [ngClass]="{'label clickable':true, 'label-info': odd() , 'label-success': !odd()}" role="tooltip"
+      aria-haspopup="true" class="tooltip">
+      {{ label() }}
+    <span class="tooltip-content">
+    @if(value()) {
+      <span class="font-white">{{ value()!.name }} <b>{{ value()!.label }}</b></span>
+    }
+    </span>
+</span>
+
+
+
+
