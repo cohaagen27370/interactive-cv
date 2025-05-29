@@ -55,3 +55,7 @@ export type Version = {
   version: number;
   date: string;
 }
+
+export type IpifyResponse = {
+  ip: string;
+}

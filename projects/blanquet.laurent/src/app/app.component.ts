@@ -64,7 +64,8 @@ export class AppComponent implements OnInit{
   trackService = inject(TrackingService);
 
   async ngOnInit() {
-    await lastValueFrom(this.trackService.track());
+    const ip = await lastValueFrom(this.trackService.getPublicIpAddress());
+    await lastValueFrom(this.trackService.track(ip));
   }
 
   $store = inject(globalStore);
