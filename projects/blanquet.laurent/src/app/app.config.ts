@@ -8,6 +8,7 @@ import { routes } from './app.routes';
 import {provideAnimations, provideNoopAnimations} from '@angular/platform-browser/animations';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {DBConfig, provideIndexedDb} from 'ngx-indexed-db';
+import {provideHttpClient, withFetch} from '@angular/common/http';
 
 const dbConfig: DBConfig  = {
   name: 'CvBlanquetLaurent',
@@ -93,6 +94,7 @@ export const appConfig: ApplicationConfig = {
       withRouterConfig({ onSameUrlNavigation: 'reload' }),
     ),
     provideAnimations(),
-    provideIndexedDb(dbConfig)
+    provideIndexedDb(dbConfig),
+    provideHttpClient(withFetch())
   ]
 };

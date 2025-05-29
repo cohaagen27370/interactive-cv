@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {ClarityModule} from '@clr/angular';
 import {
@@ -21,6 +21,8 @@ import {
 } from '@angular/animations';
 import {CommonModule} from '@angular/common';
 import {globalStore} from '../global.store';
+import {TrackingService} from '../services/tracking.service';
+import {lastValueFrom} from 'rxjs';
 
 ClarityIcons.addIcons(formIcon, userIcon, certificateIcon, organizationIcon,briefcaseIcon, announcementIcon, cpuIcon);
 
@@ -57,7 +59,13 @@ ClarityIcons.addIcons(formIcon, userIcon, certificateIcon, organizationIcon,brie
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  trackService = inject(TrackingService);
+
+  async ngOnInit() {
+    await lastValueFrom(this.trackService.track());
+  }
 
   $store = inject(globalStore);
   nowYear: number = new Date().getFullYear();
