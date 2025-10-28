@@ -11,7 +11,7 @@ export class TrackingService {
   http = inject(HttpClient);
 
   track(ip: string) {
-    return this.http.post('https://cohaagen.proxydns.com/services/v1/track', {ip});
+    return this.http.post('https://monpotager.proxydns.com/v1/track', {ip});
   }
 
   getPublicIpAddress() {

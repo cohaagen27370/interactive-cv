@@ -25,7 +25,7 @@ export const StateInitial: State = {
   skills: [],
   trainings: [],
   howto: { qualities: [], defaults: [] },
-  dataUrl: 'https://cohaagen.proxydns.com/services/datasCV/',
+  dataUrl: 'https://statics.proxydns.com/',
   version: { version: 0, date: '', id: 0 },
   isloading: false,
 };
