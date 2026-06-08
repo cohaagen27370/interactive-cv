@@ -19,7 +19,7 @@ import {
   query,
   group,
 } from "@angular/animations";
-import { CommonModule } from "@angular/common";
+
 import { globalStore } from "../global.store";
 import { TrackingService } from "../services/tracking.service";
 import { lastValueFrom } from "rxjs";
@@ -38,11 +38,10 @@ ClarityIcons.addIcons(
   selector: "app-root",
   imports: [
     RouterOutlet,
-    CommonModule,
     ClarityModule,
     RouterLink,
-    RouterLinkActive,
-  ],
+    RouterLinkActive
+],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
   animations: [
