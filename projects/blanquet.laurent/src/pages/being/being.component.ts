@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {globalStore} from '../../global.store';
 import {ClarityModule} from '@clr/angular';
 
@@ -6,6 +6,7 @@ import {ClarityModule} from '@clr/angular';
   selector: 'page-being',
   imports: [ClarityModule],
   templateUrl: './being.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './being.component.scss'
 })
 export class BeingComponent {

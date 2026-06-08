@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { ClarityModule } from "@clr/angular";
 import {
@@ -11,18 +11,8 @@ import {
   cpuIcon,
   briefcaseIcon,
 } from "@cds/core/icon";
-import {
-  trigger,
-  transition,
-  style,
-  animate,
-  query,
-  group,
-} from "@angular/animations";
 
 import { globalStore } from "../global.store";
-import { TrackingService } from "../services/tracking.service";
-import { lastValueFrom } from "rxjs";
 
 ClarityIcons.addIcons(
   formIcon,
@@ -43,50 +33,7 @@ ClarityIcons.addIcons(
     RouterLinkActive
 ],
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
-  animations: [
-    trigger("routeAnimations", [
-      transition("* <=> *", [
-        // S'applique à toutes les transitions de route
-        style({ position: "relative" }),
-        query(
-          ":enter, :leave",
-          [
-            style({
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-            }),
-          ],
-          { optional: true },
-        ),
-        query(
-          ":enter",
-          [
-            style({ opacity: 0 }), // Commence avec une opacité de 0
-          ],
-          { optional: true },
-        ),
-        group([
-          query(
-            ":leave",
-            [
-              animate("300ms ease-out", style({ opacity: 0 })), // L'ancienne page disparaît rapidement
-            ],
-            { optional: true },
-          ),
-          query(
-            ":enter",
-            [
-              animate("500ms ease-in", style({ opacity: 1 })), // La nouvelle page apparaît progressivement
-            ],
-            { optional: true },
-          ),
-        ]),
-      ]),
-    ]),
-  ],
+  styleUrl: "./app.component.scss"
 })
 export class AppComponent {
   $store = inject(globalStore);

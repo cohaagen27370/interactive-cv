@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 import { ClarityIcons, exclamationCircleIcon } from '@cds/core/icon';
 import { globalStore } from '../../global.store';
@@ -10,6 +10,7 @@ ClarityIcons.addIcons(exclamationCircleIcon);
   selector: 'page-skills',
   imports: [ClarityModule, SkillComponent],
   templateUrl: './skills.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {

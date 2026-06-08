@@ -1,12 +1,11 @@
 import {
-  ApplicationConfig,
-  provideZoneChangeDetection
+  ApplicationConfig
 } from '@angular/core';
-import {provideRouter, withHashLocation, withRouterConfig} from '@angular/router';
-
+import {provideRouter, withHashLocation, withRouterConfig, withViewTransitions} from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
 import {DBConfig, provideIndexedDb} from 'ngx-indexed-db';
-import {provideHttpClient, withFetch} from '@angular/common/http';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 const dbConfig: DBConfig  = {
   name: 'CvBlanquetLaurent',
@@ -79,18 +78,16 @@ const dbConfig: DBConfig  = {
   ]
 };
 
-
-
-
 export const appConfig: ApplicationConfig = {
   providers: [
-    //provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
       withHashLocation(),
       withRouterConfig({ onSameUrlNavigation: 'reload' }),
+      withViewTransitions()
     ),
     provideIndexedDb(dbConfig),
-    provideHttpClient(withFetch())
+    provideClientHydration(withEventReplay()),
+    provideAnimationsAsync()
   ]
 };

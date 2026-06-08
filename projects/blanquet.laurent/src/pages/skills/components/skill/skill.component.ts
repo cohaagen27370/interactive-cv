@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 import { Skill } from '../../../../types';
 
@@ -6,6 +6,7 @@ import { Skill } from '../../../../types';
   selector: 'app-skill',
   imports: [ClarityModule],
   templateUrl: './skill.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './skill.component.scss',
 })
 export class SkillComponent {

@@ -1,4 +1,4 @@
-import {Component, inject, input} from '@angular/core';
+import {Component, inject, input, ChangeDetectionStrategy} from '@angular/core';
 import {globalStore} from '../../../../global.store';
 import {Training} from '../../../../types';
 import {ClarityModule} from '@clr/angular';
@@ -9,6 +9,7 @@ import {ClarityModule} from '@clr/angular';
     ClarityModule
   ],
   templateUrl: './training.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './training.component.scss'
 })
 export class TrainingComponent {

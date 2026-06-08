@@ -1,4 +1,4 @@
-import {Component, computed, inject, input} from '@angular/core';
+import {Component, computed, inject, input, ChangeDetectionStrategy} from '@angular/core';
 import {globalStore} from '../../../../global.store';
 import {ClarityModule} from '@clr/angular';
 import {NgClass} from '@angular/common';
@@ -7,6 +7,7 @@ import {NgClass} from '@angular/common';
   selector: 'app-tag',
   imports: [ClarityModule, NgClass],
   templateUrl: './tag.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './tag.component.scss'
 })
 export class TagComponent {

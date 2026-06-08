@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import { differenceInYears } from 'date-fns';
 import {globalStore} from '../../global.store';
 import {MapComponent} from './component/map/map.component';
