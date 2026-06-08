@@ -36,9 +36,6 @@
               "node_modules/@clr/ui/clr-ui.min.css",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "server": "projects/blanquet.laurent/src/main.server.ts",
-            "prerender": false,
-            "ssr": false,
             "scripts": []
           },
           "configurations": {
@@ -55,10 +52,7 @@
                   "maximumError": "200kB"
                 }
               ],
-              "outputHashing": "all",
-              "prerender": {
-                "discoverRoutes": false
-              }
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,

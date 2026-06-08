@@ -7,12 +7,10 @@
     "types": []
   },
   "files": [
-    "src/main.ts",
-    "src/main.server.ts"
+    "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts",
-    "src/app/app.config.server.ts"
+    "src/**/*.d.ts"
   ],
   "angularCompilerOptions": {
     "extendedDiagnostics": {

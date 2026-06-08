@@ -87,7 +87,7 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions()
     ),
     provideIndexedDb(dbConfig),
-    provideClientHydration(withEventReplay()),
+    //provideClientHydration(withEventReplay()),
     provideAnimationsAsync()
   ]
 };
